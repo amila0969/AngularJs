@@ -1,7 +1,5 @@
 ﻿var url = "http://localhost/webapiwithangularjs/api/employees";
-var myApp = angular.module("myApp", []);
-
-
+var myApp = angular.module("testModule", []);
 
 var EmployeeController = function ($scope, $http) {
     //debugger;
@@ -27,12 +25,13 @@ var EmployeeController = function ($scope, $http) {
     //debugger;
 
      $scope.AddData = function () {
-       
+         debugger;
         var emp = {
-            Name:$scope.Name
+            Name: $scope.Name,
+            Email : $scope.Email
          };
          console.log(emp);
-         $http.get(url, emp)
+         $http.Post(url, emp)
 
     };
 };

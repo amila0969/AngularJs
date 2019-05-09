@@ -23,10 +23,10 @@ namespace AngularJSWebApp.Controllers
 
         [HttpGet]
         [Route("api/Employees")]
-        public IHttpActionResult Get()
+        public IEnumerable<Employee> Get()
         {
-           var employees = _employeeDBEntities.Employees.ToList();
-           return Ok(new { results = employees });
+            return _employeeDBEntities.Employees.ToList();
+           //return Ok(new { results = employees });
         }
 
         [HttpGet]
