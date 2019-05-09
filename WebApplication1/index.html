@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Angular Js with Web Api</title>
+
+    <script src="Scripts/angular.js">
+
+    </script>
+    <script src="Scripts/Controllers/EmployeeController.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body ng-app="myApp" class="container">
+    <div ng-controller="EmployeeController">
+
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>
+
+                    <input type="text" ng-model="Name" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Save</td>
+                <td>
+
+                    <input type="button" ng-click="AddData()" value="Save Data" />
+                </td>
+            </tr>
+        </table>
+
+
+        {{error}}
+        <table class="table">
+            <tr>
+                <td>Name</td>
+                <td>Email</td>
+            </tr>
+            <tr ng-repeat="employee in employees">
+                <td>
+                    {{employee.Name}}
+                </td>
+                <td>
+                    {{employee.Email}}
+                </td>
+            </tr>
+
+
+        </table>
+
+    </div>
+</body>
+</html>
